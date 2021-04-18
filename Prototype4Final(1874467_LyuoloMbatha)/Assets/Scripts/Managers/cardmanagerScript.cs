@@ -72,7 +72,9 @@ public class cardmanagerScript : MonoBehaviour
             GameObject g = Instantiate(newCardPre, drawContainment);
 
             //sets card to cardDealScript for cloned prefab
-            //sets card name in hierachy 
+            g.GetComponent<CardScript>().cardData = cAvaliableCards[i];
+            //sets card name in hierachy
+            g.name = g.GetComponent<CardScript>().cardData.cardName;
         }
         UpdateDisplay();
 
